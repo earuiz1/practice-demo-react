@@ -1,0 +1,32 @@
+
+form{
+    width: 100%;
+}
+
+.form-control input{
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 0;
+    border-radius: 12px;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    text-indent: 0.5rem;
+}
+
+.form-control label{
+    color: white;  
+}
+
+.form-buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-buttons button{
+    background-color: blue;
+    border-radius: 12px;
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+}
