@@ -9,6 +9,7 @@ function NewUserForm(props) {
   const [username, setUsername] = useState("");
   const [age, setAge] = useState("");
 
+  const [showModal, setShowModal] = useState(false);
 
   const usernameHandler = (event) => {
     //console.log(event.target.value);
@@ -20,6 +21,10 @@ function NewUserForm(props) {
     setAge(event.target.value);
   };
 
+  const closeModalHandler = () => {
+    setShowModal(false);
+  }
+
  
   const submitHandler = (event) => {
     
@@ -30,11 +35,13 @@ function NewUserForm(props) {
 
     // Check if any of the inputs are empty upon submission
     if(username.trim().length === 0 || age.trim().length === 0) {
+      setShowModal(true);
       return;
     }
 
     /* Checking if the age is less than or equal to zero. */
     if(+age <= 0) {
+      setShowModal(true);
       return;
     }
 
@@ -54,7 +61,7 @@ function NewUserForm(props) {
 
   return (
     <div>
-      <Modal/>
+      {showModal === true && <Modal closeModal = {closeModalHandler}/>}
       <form onSubmit={submitHandler}>
         <div className="form-controls">
           <div className="form-control">
