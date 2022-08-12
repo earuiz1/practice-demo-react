@@ -21,8 +21,23 @@ function NewUserForm(props) {
 
  
   const submitHandler = (event) => {
+    
+    /* It prevents the default behavior of the form, which is to refresh the page. */
     event.preventDefault();
 
+    /* Form Validation */
+
+    // Check if any of the inputs are empty upon submission
+    if(username.trim().length === 0 || age.trim().length === 0) {
+      return;
+    }
+
+    /* Checking if the age is less than or equal to zero. */
+    if(+age <= 0) {
+      return;
+    }
+
+   /* Creating an object with the username and age. */
     const user = {
       userName: username,
       userAge: age,
