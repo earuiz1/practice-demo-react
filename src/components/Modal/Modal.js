@@ -7,10 +7,10 @@ function Modal(props) {
       <div className="overlay"></div>
       <div className="modal-card">
         <div className="modal-header">
-          <h2>Header</h2>
+          <h2>{props.headerMsg}</h2>
         </div>
         <div className="modal-body">
-          <h3>Body</h3>
+          <h3>{props.bodyMsg}</h3>
         </div>
         <div className="modal-footer">
           <button type="button" onClick = {props.closeModal}>

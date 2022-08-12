@@ -9,7 +9,14 @@ function NewUserForm(props) {
   const [username, setUsername] = useState("");
   const [age, setAge] = useState("");
 
+  //Set a state for the modal status (show/hide)
   const [showModal, setShowModal] = useState(false);
+
+  //Set a state to handle dynamic error msgs
+  const [error, setError] = useState({
+    header: '',
+    body: '',
+  });
 
   const usernameHandler = (event) => {
     //console.log(event.target.value);
@@ -36,12 +43,20 @@ function NewUserForm(props) {
     // Check if any of the inputs are empty upon submission
     if(username.trim().length === 0 || age.trim().length === 0) {
       setShowModal(true);
+      setError({
+        header: 'Invalid Input (Empty)',
+        body: 'Empty fields, please enter a valid input!'
+      })
       return;
     }
 
     /* Checking if the age is less than or equal to zero. */
     if(+age <= 0) {
       setShowModal(true);
+      setError({
+        header: 'Invalid Age',
+        body: 'Invalid Age, it must be greater or equal to 1'
+      })
       return;
     }
 
@@ -61,7 +76,7 @@ function NewUserForm(props) {
 
   return (
     <div>
-      {showModal === true && <Modal closeModal = {closeModalHandler}/>}
+      {showModal === true && <Modal closeModal = {closeModalHandler} headerMsg = {error.header} bodyMsg={error.body}/>}
       <form onSubmit={submitHandler}>
         <div className="form-controls">
           <div className="form-control">
