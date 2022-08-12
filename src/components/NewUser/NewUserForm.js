@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from "../Modal/Modal";
 import "./NewUserForm.css";
 
 
@@ -53,6 +54,7 @@ function NewUserForm(props) {
 
   return (
     <div>
+      <Modal/>
       <form onSubmit={submitHandler}>
         <div className="form-controls">
           <div className="form-control">
