@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Modal from "../Modal/Modal";
+import ErrorModal from "../UI/ErrorModal";
 import "./NewUserForm.css";
 
 
@@ -76,7 +76,7 @@ function NewUserForm(props) {
 
   return (
     <div>
-      {showModal === true && <Modal closeModal = {closeModalHandler} headerMsg = {error.header} bodyMsg={error.body}/>}
+      {showModal === true && <ErrorModal closeModal = {closeModalHandler} headerMsg = {error.header} bodyMsg={error.body}/>}
       <form onSubmit={submitHandler}>
         <div className="form-controls">
           <div className="form-control">

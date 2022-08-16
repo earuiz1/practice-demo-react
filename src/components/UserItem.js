@@ -3,7 +3,6 @@ import "./UserItem.css";
 
 function UserItem(props) {
   return (
-    <div>
       <div className="user-card">
         <div className="user-sections">
           <div className="user-id-section">
@@ -16,7 +15,6 @@ function UserItem(props) {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

@@ -17,10 +17,10 @@ const [user, setUser] = useState(users);
   }
 
   return (
-    <div>
+    <React.Fragment>
       <NewUser onSaveFormData = {saveFormDataHandler}></NewUser>
       <UserList userInfo = {user}></UserList>
-    </div>
+    </React.Fragment>
   );
 }
 

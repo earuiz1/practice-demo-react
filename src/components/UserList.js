@@ -3,9 +3,9 @@ import UserItem from './UserItem';
 
 function UserList(props) {
   return (
-    <div>
+    <React.Fragment>
         {props.userInfo.map(u => <UserItem key={u.id} id={u.id} username={u.userName} age={u.userAge}></UserItem>)}
-    </div>
+    </React.Fragment>
   )
 }
 
